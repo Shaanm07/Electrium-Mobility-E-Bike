@@ -4,19 +4,19 @@ Firmware for an Electrium Mobility e-bike dashboard/controller that reads teleme
 
 Safety note: This repository is for a student design team project. Test on a stand, verify wiring, and use appropriate fusing/current limits before riding.
 
-## What it does
+## What It Does
 - Connects to a VESC over UART
 - Reads key telemetry (speed/RPM, battery voltage, current draw, etc.)
 - Displays status on a TFT screen (with Electrium branding/assets)
 - Battery indicator / icons
 
-## Hardware (typical)
+## Hardware
 - Microcontroller: **ESP32 / Arduino-compatible MCU** (depends on your build)
 - Display: TFT supported by **TFT_eSPI**
 - Motor controller: **VESC** (UART enabled)
 - Wiring: UART TX/RX + GND between MCU and VESC (plus display SPI wiring)
 
-## Repository layout (high level)
+## Repository Layout 
 - `*.ino` — main firmware sketch (entry point)
 - `VescUart*.h`, `datatypes.h` — VESC UART communication + types
 - `TFT_eSPI.h`, `PNGdec.h` — display + image decoding support
@@ -26,7 +26,7 @@ Safety note: This repository is for a student design team project. Test on a sta
 - **Arduino IDE** (or **PlatformIO**)
 - USB drivers for your board (if required)
 
-### Libraries / dependencies
+### Libraries / Dependencies
 - Install equivalent libraries via **Arduino Library Manager**:
 
 ## Build + Upload (Arduino IDE)
@@ -38,7 +38,7 @@ Safety note: This repository is for a student design team project. Test on a sta
    - Ensure SPI pins match your wiring
 5. Click **Verify** (✓), then **Upload** (→)
 
-## Configuration checklist
+## Configuration Checklist
 Before flashing, confirm:
 - **VESC UART baud rate** (must match firmware settings)
 - **Correct UART pins** on the MCU (TX/RX swapped is a common failure)
@@ -51,6 +51,3 @@ Before flashing, confirm:
 - **Garbled UI / wrong colors**: incorrect color order (RGB/BGR) or display init config.
 
 Note: The microcontroller used in this project is an ESP32-105
-
-- Electrium Mobility (UW student design team)
-- VESC community / Vedder’s VESC ecosystem
